@@ -5,6 +5,7 @@ import EmptyTable from './EmptyTable';
 
 function Table () {
     const [adder, setAdder] = useState(true);
+    const [visitlink, setVisitlink] = useState(false);
     const [formData, setFormData] = useState(
         {
             user1: "", 
@@ -55,6 +56,7 @@ function Table () {
             role5: "", 
             group_title: ""
           });
+          setVisitlink(true)
         })
         .catch(error => console.error(error));
       }
@@ -253,6 +255,7 @@ function Table () {
             </div> : <EmptyTable title="Group 4 - Team 4"/>}  
         </div>
         <button form='formid' className="my-7 shadow bg-[#17255A] hover:bg-[#223785] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full w-full">Create Groups</button>
+        {visitlink ? <a href="https://team6scrumer-groups.netlify.app/" className="my-7 shadow bg-green-500 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full">Visit Group</a> : null}
     </form>
 
   )
